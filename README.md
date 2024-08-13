@@ -1,3 +1,5 @@
+data/raw download from https://github.com/jianzhang96/MSD...Use google for a free limited GPU service
+
 # Phone Defect Detection App
 
 This application uses computer vision to detect defects on phone surfaces such as oil smudges, screen scratches, and stains.
