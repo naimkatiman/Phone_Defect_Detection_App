@@ -41,12 +41,11 @@ class PhoneDefectApp:
         self.result_label.pack()
 
     def select_image(self):
-        # Implementation of select_image method
-
-    def detect_defect(self):
+        # Implementation of select_image method 
+        def detect_defect(self):
         # Implementation of detect_defect method
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = PhoneDefectApp(root)
-    root.mainloop()
+            if __name__ == "__main__":
+                root = tk.Tk()
+                app = PhoneDefectApp(root)
+                root.mainloop()
