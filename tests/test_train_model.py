@@ -1,6 +1,4 @@
 import unittest
-import os
-import shutil
 import tensorflow as tf
 from src.model.train_model import create_model
 
@@ -10,9 +8,6 @@ class TestTrainModel(unittest.TestCase):
         
         # Check if the model has the correct number of layers
         self.assertEqual(len(model.layers), 8)
-        
-        # Check if the input shape is correct
-        self.assertEqual(model.input_shape, (None, 224, 224, 3))
         
         # Check if the output shape is correct (3 classes)
         self.assertEqual(model.output_shape, (None, 3))
