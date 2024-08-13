@@ -6,13 +6,15 @@ import tensorflow as tf
 import os
 
 class PhoneDefectApp:
-    def __init__(self, master, model_path=None):
+    def __init__(self, master, model_path=None, test_mode=False):
         self.master = master
-        master.title("Phone Defect Detection")
-        master.geometry("600x400")
+        self.test_mode = test_mode
+        if not self.test_mode:
+            master.title("Phone Defect Detection")
+            master.geometry("600x400")
 
         if model_path is None:
-            model_path = os.path.join(os.path.dirname(__file__), '..', '..', 'models', 'phone_defect_model.h5')
+            model_path = os.path.join(os.path.dirname(__file__), '..', '..', 'models', 'phone_defect_model.keras')
 
         if os.path.exists(model_path):
             self.model = tf.keras.models.load_model(model_path)
@@ -22,9 +24,27 @@ class PhoneDefectApp:
 
         self.class_names = ['Oil', 'Screen', 'Stain']
 
-        self.create_widgets()
+        if not self.test_mode:
+            self.create_widgets()
 
-    # ... rest of the class implementation ...
+    def create_widgets(self):
+        self.canvas = tk.Canvas(self.master, width=300, height=300)
+        self.canvas.pack()
+
+        self.select_button = tk.Button(self.master, text="Select Image", command=self.select_image)
+        self.select_button.pack()
+
+        self.detect_button = tk.Button(self.master, text="Detect Defect", command=self.detect_defect)
+        self.detect_button.pack()
+
+        self.result_label = tk.Label(self.master, text="")
+        self.result_label.pack()
+
+    def select_image(self):
+        # Implementation of select_image method
+
+    def detect_defect(self):
+        # Implementation of detect_defect method
 
 if __name__ == "__main__":
     root = tk.Tk()
