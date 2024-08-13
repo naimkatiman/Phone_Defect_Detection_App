@@ -1,4 +1,4 @@
-data/raw download from https://github.com/jianzhang96/MSD...Use google for a free limited GPU service
+data/raw download from https://github.com/jianzhang96/MSD   ...Use google for a free limited GPU service
 
 # Phone Defect Detection App
 
