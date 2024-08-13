@@ -19,7 +19,7 @@ def organize_dataset(source_dir, target_dir):
             shutil.move(os.path.join(source_dir, filename), 
                         os.path.join(target_dir, 'Stain', filename))
 
-# Usage
-source_directory = 'path/to/source/directory'
-target_directory = 'path/to/organized/dataset'
-organize_dataset(source_directory, target_directory)
+if __name__ == "__main__":
+    source_directory = '../../data/raw'
+    target_directory = '../../data/processed'
+    organize_dataset(source_directory, target_directory)
